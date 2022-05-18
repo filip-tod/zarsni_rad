@@ -94,4 +94,39 @@ alter table  dodatci add foreign key (igrac) references igrac(sifra);
 
 
 
-#fsaklfahflashfa
+# IGRAČ #  >>bolje bi bilo napraviti prvo ekipe pa igrače<<
+
+insert into igrac (sifra, ime, prezime, ekipa, rings_count)
+VALUES (null, 'LeBron','James', 'LA-Lakers', '4'),
+ (null, 'Michael','Jordan', 'Chicago-Bulls', '6'),
+ (null, 'Russel','Westbrook', 'LA-Lakers', '0'),
+ (null, 'Jason','Tatum', 'Boston-Celtics', '0'),
+ (null, 'Luka','Dončić', 'Dallas-Maverics', '0'),
+ (null, 'Paul','Pierce', 'Boston-Celtics', '1'),
+ (null, 'Kevin','Garnet', 'Minesota-Timberwolves', '1'),
+ (null, 'Vince','Carter', 'LA-Lakers', '4');
+
+
+# Trener #
+
+
+## NBA ##
+
+
+
+## Kupac ##
+
+
+
+## Kosarica ##
+
+
+
+## Dresovi ##
+
+## Hlacice ##
+
+## PAtike ##
+
+## dodatci ##
+
