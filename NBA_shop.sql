@@ -1,75 +1,65 @@
-# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8  < C:\Users\Filip\Documents\Zarsni_rad_PP25_filip\NBA_shop.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8  < C:\Users\Filip\Documents\Zarsni_rad_PP25_filip\zarsni_rad\NBA_shop.sql
 
 drop database if exists NBA_shop;
 create database NBA_shop default charset utf8mb4;
 use NBA_shop;
-create table NBA(
+create table NBA_team(
     sifra int not null primary key auto_increment,
-    ime_kluba varchar(50) not null,
-    igrac int not null,
-    trener int not null,
-    champions BOOLEAN
+    ime_kluba varchar(50),
+    trener VARCHAR(50),
+    championships_won char(2),
+    godina1 date, # primjer bullsi iz 1994
+    godina2 date #  do godine 1995 
 );
 
 create table igrac(
     sifra int not null primary key auto_increment,
+    NBA_team int not null,
     ime varchar(20) not null,
     prezime VARCHAR(20)not null,
-    povijest_ekipa VARCHAR(50),
+    ekipa VARCHAR(50),
     rings_count VARCHAR(50)
 );
 
-create table trener(
-    sifra int not null primary key auto_increment,
-    ime varchar(50) , 
-    prezime VARCHAR(50)
     
 
-);
 
 create table Kupac(
     sifra int not null primary key auto_increment,
     ime VARCHAR(50), 
     prezime varchar(50),
-    oib char (11)
+    oib char (11),
+    naruceni_proizvodi VARCHAR(50)
    # broj_narudzbe int not null
 
 );
 
-create table dresovi (
+create table oprema (
     sifra int not null primary key auto_increment,
     velicina VARCHAR(50),
     igrac int not null,
-    broj_dresa VARCHAR(20) not null,
-    kosarica int not null
+    vrsta_proizvoda VARCHAR(20) not null,
+    boja VARCHAR(20)
+    
     
 );
 
-create table patike(
+create table naruceni_proizvodi (
     sifra int not null primary key auto_increment,
     velicina VARCHAR(50),
-    igrac int not null,
-    kosarica int not null
-);
-
-create table hlacice(
-    sifra int not null primary key auto_increment,
-    velicina VARCHAR(50),
-    igrac int not null,
-    kosarica int not null
-);
-
-create table dodatci(
-    sifra int not null primary key auto_increment,
-    vrsta_equipmenta VARCHAR (50), #znojnici,štitnici,čarape itd...
-    velicina VARCHAR(50),
-    igrac int not null,
-    kosarica int not null
+    vrsta_proizvoda VARCHAR(20),
+    kosarica int not null,
+    datum_isporuke datetime,
+    kupac int not null
     
 );
+
+
+    
 create table kosarica(
     sifra int not null primary key auto_increment,
-    kupac int not NULL
+    oprema int not null
+
 
 );
 
@@ -77,56 +67,16 @@ create table kosarica(
 
 
 # definiranje vanjskih ključeva
-alter table NBA add foreign key (igrac) references igrac(sifra);
-alter table NBA add foreign key (trener) references trener(sifra);
+alter table igrac add foreign key (NBA_team) references NBA_team(sifra);
 
-alter table kosarica add foreign key (kupac) references kupac(sifra);
-alter table dresovi add foreign key (igrac) references igrac(sifra);
+alter table kosarica add foreign key (oprema) references oprema(sifra);
+alter table naruceni_proizvodi add foreign key (kosarica) references kosarica(sifra);
 
-alter table dresovi add foreign key (kosarica) references kosarica(sifra);
-alter table patike add foreign key (igrac) references igrac(sifra);
-alter table patike add foreign key (kosarica) references kosarica(sifra);
-alter table hlacice add foreign key (kosarica) references kosarica(sifra);
-alter table hlacice add foreign key (igrac) references igrac(sifra);
+alter table naruceni_proizvodi add foreign key (kupac) references kupac(sifra);
 
-alter table dodatci add foreign key (kosarica) references kosarica(sifra);
-alter table  dodatci add foreign key (igrac) references igrac(sifra);
+ALTER TABLE oprema add FOREIGN KEY(igrac) REFERENCES igrac(sifra);
 
 
 
-# IGRAČ #  >>bolje bi bilo napraviti prvo ekipe pa igrače<<
 
-insert into igrac (sifra, ime, prezime, ekipa, rings_count)
-VALUES (null, 'LeBron','James', 'LA-Lakers', '4'),
- (null, 'Michael','Jordan', 'Chicago-Bulls', '6'),
- (null, 'Russel','Westbrook', 'LA-Lakers', '0'),
- (null, 'Jason','Tatum', 'Boston-Celtics', '0'),
- (null, 'Luka','Dončić', 'Dallas-Maverics', '0'),
- (null, 'Paul','Pierce', 'Boston-Celtics', '1'),
- (null, 'Kevin','Garnet', 'Minesota-Timberwolves', '1'),
- (null, 'Vince','Carter', 'LA-Lakers', '4');
-
-
-# Trener #
-
-
-## NBA ##
-
-
-
-## Kupac ##
-
-
-
-## Kosarica ##
-
-
-
-## Dresovi ##
-
-## Hlacice ##
-
-## PAtike ##
-
-## dodatci ##
 
