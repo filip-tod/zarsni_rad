@@ -3,21 +3,19 @@
 drop database if exists NBA_shop;
 create database NBA_shop default charset utf8mb4;
 use NBA_shop;
-create table NBA_team(
+create table nba_team(
     sifra int not null primary key auto_increment,
     ime_kluba varchar(50),
     trener VARCHAR(50),
     championships_won varchar(50),
-    godina1 date, # primjer bullsi iz 1994
-    godina2 date #  do godine 1995 
+    stadion VARCHAR(50)
 );
 
 create table igrac(
     sifra int not null primary key auto_increment,
-    NBA_team int not null,
+    nba_team int not null,
     ime varchar(20) not null,
     prezime VARCHAR(20)not null,
-    ekipa VARCHAR(50),
     rings_count VARCHAR(50)
 );
 
@@ -28,9 +26,7 @@ create table Kupac(
     sifra int not null primary key auto_increment,
     ime VARCHAR(50), 
     prezime varchar(50),
-    oib char (11),
-    naruceni_proizvodi VARCHAR(50)
-   # broj_narudzbe int not null
+    email VARCHAR(50)
 
 );
 
@@ -40,6 +36,7 @@ create table oprema (
     boja VARCHAR(50),
     tezina VARCHAR(50),
     igrac int not null,
+    cijena INT,
     tezina_proizvoda DECIMAL,
     vrsta_proizvoda VARCHAR(20) not null
     
@@ -49,12 +46,8 @@ create table oprema (
 
 create table naruceni_proizvodi (
     sifra int not null primary key auto_increment,
-    velicina VARCHAR(50),
-    vrsta_proizvoda VARCHAR(20),
     kosarica int not null,
-    datum_isporuke datetime,
-    kupac int not null,
-    ukupna_tezina_proizvoda decimal
+    kupac int not null
     
 );
 
@@ -63,7 +56,10 @@ create table naruceni_proizvodi (
 create table kosarica(
     sifra int not null primary key auto_increment,
     oprema int not null,
-    kolicina VARCHAR(50)
+    ukupna_tezina_proizvoda decimal,
+    ukupna_cijena_proizvoda int,
+    datum_isporuke datetime,
+    kolicina_opreme VARCHAR(50)
 
 
 );
@@ -72,7 +68,7 @@ create table kosarica(
 
 
 # definiranje vanjskih ključeva
-alter table igrac add foreign key (NBA_team) references NBA_team(sifra);
+alter table igrac add foreign key (nba_team) references nba_team(sifra);
 
 alter table kosarica add foreign key (oprema) references oprema(sifra);
 alter table naruceni_proizvodi add foreign key (kosarica) references kosarica(sifra);
@@ -84,23 +80,22 @@ ALTER TABLE oprema add FOREIGN KEY(igrac) REFERENCES igrac(sifra);
 
 
 
- 
-#insert into TABLE NBA_team (ime_kluba, trener, championships_won, godina1, godina2)
-#values ('LA-Lakers', 'Frank-Vogel', '17', '2021-10-19', '2022-04-10'),                   #1 LA-Lakers      #Western
-    --    ('Pheonix-suns', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),              #2 Pheonix
-    --    ('Golden-state-wariors', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),      #3 Golden state
-    --    ('Dallas-Maverics', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),           #4 Dallas
-    --    ('Huston-rockets', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),            #5 Huston
-    --    ('LA-Clipers', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),                #6 Clipers
-    --    ('Memphis-Grizzlies', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),         #7 Memphis
-    --    ('San-Antoni-Spurs', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),          #8 San Antonio
-    --    ('Oklahoma-City-Thunder', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),     #9 Oklahoma
-    --    ('New-Orleans-Pelicans', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),      #10 Pelicans
-    --    ('Denver-Nugets', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),             #11 Denver
-    --    ('Portlands-Trailblaizers', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),   #12 Portland
-    --    ('Sacramento-Kings', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),          #13 Sacramento
-    --    ('Utah-Jazz', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),                 #14 utah
-    --    ('Minesota-Timberwolves', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),     #15Minesota     # western
+ insert into nba_team (sifra, ime_kluba, trener, championships_won, stadion)
+ values (null,'LA-Lakers','Frank-Vogel', '17', 'Crypto.com_Arena' ),                  #1 LA-Lakers      #Western
+        (null,'Pheonix-Suns', 'Monty-Wiliams', '0', 'Footprint-Center'),              #2 Pheonix
+        (null,'Golden-State', 'Steve-Kerr', '6', 'Chase-Center'),                     #3 Golden state
+        (null,'Dallas-Maverics', 'Jason-Kid', '1', 'American-Airlines'),              #4 Dallas
+        (null,'Huston-Rockets', 'Stephen-Silas', '2', 'Toyota-Center'),               #5 Huston
+        (null,'La-Clipers', 'Tyronn-Lue', '0', 'Crypto.com_Arena'),                   #6 Clipers
+        (null,'Memphis-Grizzlies','Taylor-Jenkins', '0', 'FedExForum'),               #7 Memphis
+        (null,'San_Antonio-Spurs', 'Gregg-Popovich', '5', 'AT&T-Center'),             #8 San Antonio
+        (null, 'Oklahoma-City-Thunder', 'Mark Daigneault', '1', 'Paycom-Center'),      #9 Oklahoma
+        (null,'New-Orleans-Pelicans','Willie Green','0', 'Smoothie-King-Center'),     #10 Pelicans
+        (null,'Denver-Nugets', 'Michael-Malone', '0', 'Ball Arena'),                  #11 Denver
+        (null, 'Portlands-Trailblaizers', 'Chauncey_Billups', '1', 'Moda Center'),     #12 Portland
+        (null, 'Sacramento-Kings','Mike-Brown', '1','Golden-1-Center'),                #13 Sacramento
+        (null,'Utah-Jazz','Quin Snyder', '0', 'Vivint-Arena'),                        #14 utah
+        (null, 'Minesota-Timberwolves', 'Chris-Finch', '0', 'Target-Center');          #15Minesota     # western
 
 
     --    ('Miami-Heat', 'Monty-Williams', '0', '2021-10-19', '2022-04-10'),            #16 Miami     # EAST  
