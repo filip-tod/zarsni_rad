@@ -34,11 +34,10 @@ create table oprema (
     sifra int not null primary key auto_increment,
     velicina VARCHAR(50),
     boja VARCHAR(50),
-    tezina VARCHAR(50),
     igrac int not null,
-    cijena INT,
-    tezina_proizvoda DECIMAL,
-    vrsta_proizvoda VARCHAR(20) not null
+    cijena decimal(18,2),
+    tezina_proizvoda VARCHAR(50),
+    vrsta_proizvoda VARCHAR(50) not null
     
     
     
@@ -161,8 +160,25 @@ values            (null,'LeBron', 'James', '4', 1 ),
                   (null, 'Donovan', 'Mitchell', '0', 14),    #UTAH 14
                   (null, 'Karl-Anthony', 'Towns', '0', 15),
                   (null, 'Anthony', 'Edwards', '0',15),
-                  (null, "D'Angelo", 'Russel', '0', 15);
+                  (null, "D'Angelo", 'Russel', '0', 15);    #Minesota 15 <<<<WEST>>>>
 
- 
+                  ### EAST igrači #### nadopuniti
+
+#Oprema
+INSERT into oprema (sifra,vrsta_proizvoda, igrac, boja, velicina, tezina_proizvoda, cijena )
+values             (null,'košarkaški-Dres', 1, 'Žuto-Ljubičasta', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 1, 'Žuto-Ljubičasta', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 1, 'Žuto-Ljubičasta', 'L', '150g', '399.99'),
+                   (null,'štitnici', 1, 'Žuto-Ljubičasta', 'L', '50g', '150.99'),
+                   (null,'košarkaški-Dres', 2, 'Žuto-Ljubičasta', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 2, 'Žuto-Ljubičasta', 'M', '250g', '499.99'),
+                   (null,'košarkaški-Dres', 2, 'Žuto-Ljubičasta', 'S', '200g', '499.99'),
+                   (null,'hlaćice', 2, 'Žuto-Ljubičasta', 'XL', '150g', '399.99'),
+                   (null,'Štitnici', 1, 'Žuto-Ljubičasta', 'L', '100g', '250.99'),
+                   (null,'košarkaški-Dres', 3, 'Žuto-Ljubičasta', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 3, 'Žuto-Ljubičasta', 'L', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 3, 'Žuto-Ljubičasta', 'M', '200g', '499.99'),
+                   (null,'hlaćice', 3, 'Žuto-Ljubičasta', 'L', '150g', '350.99');
 
 
+    
