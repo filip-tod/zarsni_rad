@@ -160,10 +160,21 @@ values            (null,'LeBron', 'James', '4', 1 ),
                   (null, 'Donovan', 'Mitchell', '0', 14),    #UTAH 14
                   (null, 'Karl-Anthony', 'Towns', '0', 15),
                   (null, 'Anthony', 'Edwards', '0',15),
-                  (null, "D'Angelo", 'Russel', '0', 15);    #Minesota 15 <<<<WEST>>>>
+                  (null, "D'Angelo", 'Russel', '0', 15),    #Minesota 15 <<<<WEST>>>>
 
                   ### EAST igrači #### nadopuniti
 
+
+                  (null, 'Jimmy', 'Butler', '0', 16),
+                  (null, 'Bam', 'Adebayo', '0', 16),
+                  (null, 'Tyler', 'Hero', '0', 16),       #Miami 16
+                  (null, 'Jason', 'Tatum', '0', 17),
+                  (null, 'Marcus', 'Smart', '0', 17),   #Boston 17
+                  (null, 'Jaylen', 'Brown', '0', 17),
+                  (null, 'Gianis', 'Antetokumpo', '1', 18),
+                  (null, 'Chris', 'Midelton', '1', 18),
+                  (null, 'Jrue', 'holiday', '1', 18);
+                --   (null, 'Kevin', 'Durant', '')
 #Oprema
 INSERT into oprema (sifra,vrsta_proizvoda, igrac, boja, velicina, tezina_proizvoda, cijena )
 values             (null,'košarkaški-Dres', 1, 'Žuto-Ljubičasta', 'XL', '300g', '499.99'),
