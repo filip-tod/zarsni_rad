@@ -14,8 +14,8 @@ create table nba_team(
 create table igrac(
     sifra int not null primary key auto_increment,
     nba_team int not null,
-    ime varchar(20) not null,
-    prezime VARCHAR(20)not null,
+    ime varchar(20) ,
+    prezime VARCHAR(20),
     rings_count VARCHAR(50)
 );
 
@@ -24,9 +24,9 @@ create table igrac(
 
 create table Kupac(
     sifra int not null primary key auto_increment,
-    ime VARCHAR(50), 
-    prezime varchar(50),
-    email VARCHAR(50)
+    ime VARCHAR(50)not null, 
+    prezime varchar(50)not null,
+    email VARCHAR(50)not null
 
 );
 
@@ -37,7 +37,7 @@ create table oprema (
     igrac int not null,
     cijena decimal(18,2),
     tezina_proizvoda VARCHAR(50),
-    vrsta_proizvoda VARCHAR(50) not null
+    vrsta_proizvoda VARCHAR(50) 
     
     
     
@@ -55,10 +55,10 @@ create table naruceni_proizvodi (
 create table kosarica(
     sifra int not null primary key auto_increment,
     oprema int not null,
-    ukupna_tezina_proizvoda decimal,
-    ukupna_cijena_proizvoda int,
+    ukupna_tezina_proizvoda decimal(18,5) not null,
+    ukupna_cijena_proizvoda decimal(18,5) not null,
     datum_isporuke datetime,
-    kolicina_opreme VARCHAR(50)
+    kolicina_opreme int
 
 
 );
@@ -173,8 +173,44 @@ values            (null,'LeBron', 'James', '4', 1 ),
                   (null, 'Jaylen', 'Brown', '0', 17),
                   (null, 'Gianis', 'Antetokumpo', '1', 18),
                   (null, 'Chris', 'Midelton', '1', 18),
-                  (null, 'Jrue', 'holiday', '1', 18);
-                --   (null, 'Kevin', 'Durant', '')
+                  (null, 'Jrue', 'holiday', '1', 18),   #milwakee 18
+                  (null, 'Kevin', 'Durant', '2', 19),
+                  (null, 'Kyre', 'Irving', '1', 19),
+                  (null, 'Ben', 'Simons', '0', 19),   # Brooklyn 19
+                  (null, 'Lonzo', 'Ball', '0', 20),
+                  (null, 'Zac', 'Lavine', '0', 20),
+                  (null, 'DeMar', 'DeRozan', '0', 20), #Bulls 20
+                  (null, 'Kyle', 'Kuzma', '0', 21),
+                  (null, 'Bradly', 'Beal', '0', 21),
+                  (null, 'Kristaps', 'Porzingis', '0', 21), # Washington 21
+                  (null, 'Markele', 'Fultz', '0', 22),
+                  (null, 'Cole', 'Anthony', '0', 22),
+                  (null, 'Franz', 'Wagner', '0', 22),    # Orlando 22
+                  (null, 'Trae', 'Young', '0', 23),
+                  (null, 'Jhon', 'Colins', '0', 23),
+                  (null, 'Bogdan', 'Bogdanović', '0', 23),   #Atlanta  23
+                  (null, 'Scotie', 'Barns', '0', 24),
+                  (null, 'Pascal', 'Siakam', '1', 24),
+                  (null, 'Fred', 'VanVleet', '1', 24),   # Toronto 24
+                  (null, 'Cade', 'Cunningham', '0', 25),
+                  (null, 'Jeramy', 'Grant', '0', 25),
+                  (null, 'Killian', 'Hayes', '0', 25),   # Detroit Pistons 25
+                  (null, 'Julius', 'Randle', '0', 26),
+                  (null, 'RJ', 'Barett', '0', 26),
+                  (null, 'Derick', 'Rose', '0', 26),   # Kniks 26
+                  (null, 'LaMelo', 'Ball', '0', 27),
+                  (null, 'Miles', 'Bridges', '0', 27),
+                  (null, 'Gordon', 'Hayward', '0', 27),   # Charlote 27
+                  (null, 'Darius', 'Garland', '0', 28),
+                  (null, 'Kevin', 'Love', '1', 28),
+                  (null, 'Evan', 'Mobley', '0', 28),   #Cleveland 28
+                  (null, 'Buddy', 'Hield', '0', 29),
+                  (null, 'Myles', 'Turner', '0', 29),
+                  (null, 'Malcom', 'Brogdon', '0', 29),  # Indiana 29
+                  (null, 'Joel', 'Embiid', '0', 30),
+                  (null, 'James', 'Harden', '0', 30),
+                  (null, 'Tobias', 'Harris', '0', 30 );   #Philadelphia 30
+
 #Oprema
 INSERT into oprema (sifra,vrsta_proizvoda, igrac, boja, velicina, tezina_proizvoda, cijena )
 values             (null,'košarkaški-Dres', 1, 'Žuto-Ljubičasta', 'XL', '300g', '499.99'),
@@ -185,11 +221,82 @@ values             (null,'košarkaški-Dres', 1, 'Žuto-Ljubičasta', 'XL', '300
                    (null,'košarkaški-Dres', 2, 'Žuto-Ljubičasta', 'M', '250g', '499.99'),
                    (null,'košarkaški-Dres', 2, 'Žuto-Ljubičasta', 'S', '200g', '499.99'),
                    (null,'hlaćice', 2, 'Žuto-Ljubičasta', 'XL', '150g', '399.99'),
-                   (null,'Štitnici', 1, 'Žuto-Ljubičasta', 'L', '100g', '250.99'),
+                   (null,'Štitnici', 2, 'Žuto-Ljubičasta', 'L', '100g', '250.99'),
                    (null,'košarkaški-Dres', 3, 'Žuto-Ljubičasta', 'XL', '300g', '499.99'),
                    (null,'košarkaški-Dres', 3, 'Žuto-Ljubičasta', 'L', '300g', '499.99'),
                    (null,'košarkaški-Dres', 3, 'Žuto-Ljubičasta', 'M', '200g', '499.99'),
-                   (null,'hlaćice', 3, 'Žuto-Ljubičasta', 'L', '150g', '350.99');
+                   (null,'hlaćice', 3, 'Žuto-Ljubičasta', 'L', '150g', '350.99'),
+                    (null,'košarkaški-Dres', 4, 'bijelo-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 4, 'bijelo-crveni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 4, 'bijelo-crveni', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 5, 'bijelo-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 5, 'bijelo-crveni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 5, 'bijelo-crveni', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 6, 'bijelo-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 6, 'bijelo-crveni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 6, 'bijelo-crveni', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 7, 'bijelo-zlatni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 7, 'bijelo-zlatni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 7, 'bijelo-zlatni', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 8, 'bijelo-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 8, 'bijelo-zlatni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 8, 'bijelo-zlatni', 'L', '150g', '399.99'),
+                       (null,'košarkaški-Dres', 9, 'bijelo-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 9, 'bijelo-zlatni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 9, 'bijelo-zlatni', 'L', '150g', '399.99'),
+                       (null,'košarkaški-Dres', 10, 'plavo-bijeli', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 10, 'plavobijeli', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 10, 'plavo-bijeli', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 11, 'plavo-bijeli', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 11, 'plavobijeli', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 11, 'plavo-bijeli', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 12, 'plavo-bijeli', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 12, 'plavobijeli', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 12, 'plavo-bijeli', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 13, 'crno-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 13, 'crno-crveni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 13, 'crno-crveni', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 14, 'crno-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 14, 'crno-crveni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 14, 'crno-crveni', 'L', '150g', '399.99'),
+                      (null,'košarkaški-Dres', 15, 'crno-crveni', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 15, 'crno-crveni', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 15, 'crno-crveni', 'L', '150g', '399.99'),   #Huston
+                         (null,'košarkaški-Dres', 14, 'plavo-bijeli', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 14, 'plavo-bijeli', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 14, 'plavo-bijeli', 'L', '150g', '399.99'),
+                     (null,'košarkaški-Dres', 15, 'plavo-bijeli', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 15, 'plavo-bijeli', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 15, 'plavo-bijeli', 'L', '150g', '399.99'),
+                   (null, 'štitnik', 15 , 'plavo-bijeli', 'L', '100g', '150.99'),
+                   (null,'košarkaški-Dres', 16, 'plavo-bijeli', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 16, 'plavo-bijeli', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 16, 'plavo-bijeli', 'L', '150g', '399.99'),
+                   (null, 'štitnik', 16 , 'plavo-bijeli', 'L', '100g', '150.99'),
+                         (null,'košarkaški-Dres', 17, 'plavo-bijeli', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 17, 'plavo-bijeli', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 17, 'plavo-bijeli', 'L', '150g', '399.99'),
+                   (null, 'štitnik', 17 , 'plavo-bijeli', 'L', '100g', '150.99'),
+                         (null,'košarkaški-Dres', 18, 'plavi', 'XL', '300g', '499.99'), #memphis
+                   (null,'košarkaški-Dres', 18, 'plavi', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 18, 'plavi', 'L', '150g', '399.99'),
+                   (null, 'štitnik', 18 , 'plavi', 'L', '100g', '150.99'),
+                         (null,'košarkaški-Dres', 19, 'plavi', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 19, 'plavi', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 19, 'plavi', 'L', '150g', '399.99'),
+                   (null, 'štitnik', 19 , 'plavi', 'L', '100g', '150.99'),
+                         (null,'košarkaški-Dres', 20, 'plavi', 'XL', '300g', '499.99'),
+                   (null,'košarkaški-Dres', 20, 'plavi', 'L', '250g', '499.99'),
+                   (null,'hlaćice', 20, 'plavi', 'L', '150g', '399.99'),
+                   (null, 'štitnik', 20 , 'plavi', 'L', '100g', '150.99');
+
+
+
+
+
+
+
+
 
 
     
