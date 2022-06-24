@@ -12,19 +12,14 @@
     <!-- Start tijelo -->
     
       <div class="grid-x grid-margin-x" id="tijelo">
-        <div class="cell large-2 medium-4 small-6">
+        <div class="cell  small-6">
           <div class="success callout">
-            Edunova
+            WEST
           </div>
         </div>
-        <div class="cell large-2 medium-4 small-6">
+        <div class="cell  small-6">
           <div class="warning callout">  
-            Osijek
-          </div>
-        </div>
-        <div class="cell large-2 medium-4 small-6">
-          <div class="alert callout">
-            Ponedjeljak
+            EAST
           </div>
         </div>
       </div>

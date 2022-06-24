@@ -7,6 +7,7 @@
     <div class="grid-container">
     <?php include_once 'izbornik.php'; ?>
     <!-- Start tijelo -->
+    <img src="C:\Users\Filip\Documents\Zarsni_rad_PP25_filip\zarsni_rad\slike" alt="legende.webp" width="50" height="50">
     <div class="grid-x grid-margin-x" id="tijelo">
       <div class="cell">
         <div class="callout">
@@ -14,9 +15,10 @@
         </div>
       </div>
     </div>
+  <img class="cover" src="slike/legende1.png" alt="legende" >
     <ul>
       <li>
-        ovo je moj završni rad za Edunova školu. </br>
+        ovo je moj završni rad za školu Edunova. </br>
         na ovoj web stranici možete pronaći NBA proizvode vezane uz igrače i NBA timove
       </li>
     </ul>
@@ -26,5 +28,6 @@
     require_once 'podnozje.php'; ?>
     </div>
     <?php require_once 'jsskripte.php'; ?>
+
   </body>
 </html>

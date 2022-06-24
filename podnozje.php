@@ -2,7 +2,7 @@
 <div class="grid-x">
       <div class="cell">
         <div class="callout">
-          &copy; NBA
+          &copy; filip-tod
         </div>
       </div>
     </div>
