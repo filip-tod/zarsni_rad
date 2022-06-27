@@ -7,11 +7,10 @@
     <div class="grid-container">
     <?php include_once 'izbornik.php'; ?>
     <!-- Start tijelo -->
-    <img src="C:\Users\Filip\Documents\Zarsni_rad_PP25_filip\zarsni_rad\slike" alt="legende.webp" width="50" height="50">
     <div class="grid-x grid-margin-x" id="tijelo">
       <div class="cell">
-        <div class="callout">
-          NBA SHOP
+        <div class="callout" >
+          <h1 id="naslov">All the legends in one place</h1>
         </div>
       </div>
     </div>

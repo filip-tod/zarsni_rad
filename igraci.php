@@ -7,13 +7,7 @@
     <div class="grid-container">
     <?php include_once 'izbornik.php'; ?>
     <!-- Start tijelo -->
-    <div class="grid-x grid-margin-x" id="body">
-      <div class="cell">
-        <div class="callout">
-         <?php echo $_GET['ime']; ?>
-        </div>
-      </div>
-    </div>
+    
     <!-- End tijelo -->
     <?php require_once 'podnozje.php'; ?>
     </div>

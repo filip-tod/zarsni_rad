@@ -13,8 +13,8 @@
             <a href="#">NBA liga</a>
             <ul class="menu vertical">
               <li><a href="grid.php">Divizija</a></li>     <!-- divizije u nba/grid -->
-              <li><a href="prijenosParametara.php?ime=NBA_teams">NBA timovi</a></li>
-              <li><a href="prijenosDvaParametra.php?boja=red&ime=Osijek">Igrači</a></li>
+              <li><a href="nbaTimovi.php">NBA timovi</a></li>
+              <li><a href="igraci.php">Igrači</a></li>
             </ul>
           </li>
           <li>

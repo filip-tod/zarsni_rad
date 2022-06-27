@@ -10,16 +10,17 @@
     <?php include_once 'izbornik.php'; ?>
 
     <!-- Start tijelo -->
-    
       <div class="grid-x grid-margin-x" id="tijelo">
-        <div class="cell  small-6">
+        <div class="cell  medium-6">
           <div class="success callout">
-            WEST
-          </div>
-        </div>
-        <div class="cell  small-6">
-          <div class="warning callout">  
             EAST
+            <a href="nbaTimovi.php"><img class="cover" src="slike/east.png" alt="east" ></a>
+            </div>
+          </div>
+        <div class="cell  medium-6" >
+         <div class="warning callout">
+            WEST
+            <a href="nbaTimovi.php" id="west"><img class="cover" src="slike/west.png" alt="west" > </a>
           </div>
         </div>
       </div>

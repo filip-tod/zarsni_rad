@@ -1,4 +1,5 @@
 <!-- Start podnožje -->
+<footer>
 <div class="grid-x">
       <div class="cell">
         <div class="callout">
@@ -6,4 +7,5 @@
         </div>
       </div>
     </div>
+    </footer>
     <!-- End podnožje -->

@@ -1,13 +1,9 @@
-#body{
-    color:blue;
-    min-height: 400px;
+#tijelo{
+  text-align: right;
+  justify-items: center;
+  text-justify: auto;
 }
 
-#logo {
-       margin: 0 auto;
-       width: 1000px;
-  }
-
-#cover {
-width: auto;
+#west{
+  size: 2rem;
 }
