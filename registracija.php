@@ -14,6 +14,8 @@ $prezime = isset($_GET['prezime']) ? $_GET['prezime'] : '';
     <div class="grid-x grid-margin-x" id="tijelo">
       <div class="cell">
         <div class="callout">
+
+        <h3 style="text-align:center">Nakon ovog koraka postaješ član našeg NBA tima :)</h3>
           
 
           <form action="" method="get">
@@ -28,7 +30,9 @@ $prezime = isset($_GET['prezime']) ? $_GET['prezime'] : '';
             <input placeholder="Horvat" type="text" id="prezime" name="prezime"
             value="<?=$prezime?>" />  
             </label>
-           
+
+          
+           <p style="text-align: center">lozinka</p>
             <input 
             placeholder="ivan.horvat@tvrtka.hr"
             type="email" id="email" name="email" />
@@ -44,13 +48,12 @@ $prezime = isset($_GET['prezime']) ? $_GET['prezime'] : '';
             <!-- odabiri -->
             <p style="text-align:center">Tko je G.O.A.T.? </p>
             <input  type="radio" id="Lebron" name="gd" value="1" 
-            checked="checked" />
-
+            />
             <label for="Lebron">LeBron James</label>
 
             <hr/>
             
-            <input type="radio" id="Jordan" name="gd" value="2" />
+            <input type="radio" id="Jordan" name="gd" value="2"  checked="checked"/>
             <label for="Jordan">Michael Jordan</label> 
             
             <hr/>
@@ -67,7 +70,7 @@ $prezime = isset($_GET['prezime']) ? $_GET['prezime'] : '';
             
           
             
-            <input type="submit" value="Predaj">
+            <input  type="submit" value="Predaj">
           
           </form>
 
