@@ -46,21 +46,21 @@ $prezime = isset($_GET['prezime']) ? $_GET['prezime'] : '';
             <input  type="radio" id="Lebron" name="gd" value="1" 
             checked="checked" />
 
-            <label for="Lebron">LeBron James</label><br />
+            <label for="Lebron">LeBron James</label>
 
             <hr/>
             
             <input type="radio" id="Jordan" name="gd" value="2" />
-            <label for="Jordan">Michael Jordan</label> <br />
+            <label for="Jordan">Michael Jordan</label> 
             
             <hr/>
             
             <input type="radio" id="kobe" name="gd" value="3" />
-            <label for="kobe">Kobe Bryant</label> <br />
+            <label for="kobe">Kobe Bryant</label> 
             
           
 
-            <label for="opis" style="text-align:left">Opiši se i zašto voliš košarku :)</label>
+            <label for="opis" style="text-align:left">Opiši sebe i zašto voliš košarku :)</label>
             <textarea name="opis" id="opis" cols="30" rows="5"></textarea>
             
             <hr />
@@ -84,7 +84,6 @@ $prezime = isset($_GET['prezime']) ? $_GET['prezime'] : '';
     </div>
     <!-- End tijelo -->
     <?php 
-    // čitati https://www.tutorialrepublic.com/php-tutorial/php-include-files.php
     require_once 'podnozje.php'; ?>
     </div>
     <?php require_once 'jsskripte.php'; ?>

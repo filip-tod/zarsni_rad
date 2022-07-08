@@ -12,8 +12,7 @@
           <li>
             <a href="#">NBA liga</a>
             <ul class="menu vertical">
-              <li><a href="grid.php">Divizija</a></li>     <!-- divizije u nba/grid -->
-              <li><a href="nbaTimovi.php">NBA timovi</a></li>
+              <li><a href="divizija.php">Divizija</a></li>     <!-- divizije u nba/grid -->
               <li><a href="igraci.php">Igrači</a></li>
             </ul>
           </li>

@@ -10,7 +10,7 @@
     <section class="container">
   <div class="left-half">
     <article>
- <ol>
+ <ol id="West">
   <li>LA-Lakers</li>
   <li>Memphis-Grizlies</li>
   <li>Utah-Jazz</li>
@@ -29,29 +29,7 @@
  </ol>
  </article>
  </div>
- <br>
- <div class="right-half">
-    <article>
- <ol id="east">
-  <li>Philadelphila-76ERS</li>
-  <li>Cleveland-Cavaliers</li>
-  <li>Indiana-Pacers</li>
-  <li>Detroit-Pistons</li>
-  <li>Charlotte-Hornets</li>
-  <li>Atlanta-Hawks</li>
-  <li>Milwakee-Bucks</li>
-  <li>Chikago-Bulls</li>
-  <li>Miami-Heat</li>
-  <li>Brooklyn-Nets</li>
-  <li>Toronto-Raptors</li>
-  <li>Boston-Celtics</li>
-  <li>NY-Knicks</li>
-  <li>Orlando-Magic</li>
-  <li>Washington-Wizards</li>
- </ol>
- </article>
-  </div>
-</section>
+ </section>
     <!-- End tijelo -->
     <?php 
     // čitati https://www.tutorialrepublic.com/php-tutorial/php-include-files.php
