@@ -10,7 +10,9 @@
     <div class="grid-x grid-margin-x" id="tijelo">
       <div class="cell">
         <div class="callout" >
-          <h1 id="naslov">All the legends in one place</h1>
+          
+          <h1 id="naslov" style="text-align:center">All the legends in one place</h1>
+
         </div>
       </div>
     </div>

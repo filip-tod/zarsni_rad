@@ -3,7 +3,7 @@
 <div class="grid-x">
       <div class="cell">
         <div class="callout">
-          &copy; filip-tod
+          &copy; Filip-Tod
         </div>
       </div>
     </div>

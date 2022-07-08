@@ -27,7 +27,16 @@
                         <li><a href="patike.php">Patike</a></li>
                         <li><a href="dodatci.php">Dodatci</a></li>
                     </ul>
-              
+            </ul>
+          </li>
+          <li>
+            <a href="#">podatci o korisniku</a>
+            <ul class="menu vertical">
+                
+                    <ul class="menu vertical">
+                        <li><a blank="#" href="registracija.php">Registracija</a></li>
+                        <li><a blank="#" href="podatciKorisnika.php">Moji profil</a></li>
+                    </ul>
             </ul>
           </li>
         </ul>
