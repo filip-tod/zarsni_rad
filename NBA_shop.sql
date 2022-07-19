@@ -290,9 +290,15 @@ values             (null,'košarkaški-Dres', 1, 'Žuto-Ljubičasta', 'XL', '300
                    (null,'hlaćice', 20, 'plavi', 'L', '150g', 399.99),
                    (null, 'štitnik', 20 , 'plavi', 'L', '100g', 150.99);
 
+insert into kosarica(sifra, oprema , ukupna_tezina_proizvoda , ukupna_cijena_proizvoda, datum_isporuke, kolicina_opreme)
+values(null,1,10.0,12.2,"2022-07-13 12:24:60", 4);
 
 
+insert into kupac(sifra,ime, prezime,email)
+values(1,"Filip", "Todorović", "filip-beg95@hotmail.com");
 
+insert into naruceni_proizvodi(sifra,kosarica ,kupac)
+values(1,1,1);
 
 
 
