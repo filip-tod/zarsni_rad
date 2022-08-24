@@ -19,7 +19,6 @@
           <li>
             <a href="#">Trgovina</a>
             <ul class="menu vertical">
-                
                     <ul class="menu vertical">
                         <li><a href="dresovi.php">Dresovi</a></li>
                         <li><a href="hlacice.php">hlaćice</a></li>
@@ -30,13 +29,17 @@
           </li>
           <li>
             <a href="#">podatci o korisniku</a>
-            <ul class="menu vertical">
-                
                     <ul class="menu vertical">
                         <li><a blank="#" href="registracija.php">Registracija</a></li>
                         <li><a blank="#" href="podatciKorisnika.php">Moji profil</a></li>
                     </ul>
-            </ul>
+          </li>
+          <li>
+            <a href="#">ciklična tablica i ljubavni kalkulator</a>
+                    <ul class="menu vertical">
+                        <li><a blank="#" href="ljubavni_kalkulator/ljubavni_kalkulator.php">ljubavni kalkulator</a></li>
+                        <li><a blank="#" href="ciklicna_tablica/ciklicnaTablica.php">ciklična tablica</a></li>
+                    </ul>  
           </li>
         </ul>
       </div>

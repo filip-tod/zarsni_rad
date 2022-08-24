@@ -23,13 +23,13 @@
         na ovoj web stranici možete pronaći NBA proizvode vezane uz igrače i NBA timove
       </li>
     </ul>
-    <iframe width="420" height="315"
+    <!-- <iframe width="420" height="315"
 src="https://www.youtube.com/watch?v=_JZom_gVfuw">
-</iframe>
+</iframe> -->
 
     <!-- End tijelo -->
     <?php 
-    // čitati https://www.tutorialrepublic.com/php-tutorial/php-include-files.php
+
     require_once 'podnozje.php'; ?>
     </div>
     <?php require_once 'jsskripte.php'; ?>
